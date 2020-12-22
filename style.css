@@ -1,65 +1,114 @@
+@charset "UTF-8";
 body {
   background-color: #133b04fa;
   color: white; }
 
+/*
+//=======================================
 .grid_dem {
-  display: grid;
-  font-size: 30px;
-  padding: 20px;
-  background-color: #794f45;
-  margin: 0 0 20px 0; }
-
+    display: grid;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #794f45;
+    margin: 0 0 20px 0;
+}
 .grid-inline_dem {
-  display: inline-grid;
-  font-size: 30px;
-  padding: 20px;
-  background-color: #77608d; }
-
+    display: inline-grid;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #77608d;
+}
+//=======================================
+.grid__body {
+    display: grid;
+    //grid-template-columns: 30% 150px 50%;
+    //grid-template-columns: 1fr 1.5fr 1fr;
+    //1fr при остальных фиксированных единицах стремится заполнить всё пространство, 1fr не может выступать в качестве минимальной ширины
+    //grid-template-columns: 200px minmax(150px, 1fr) 200px;
+    //grid-template-columns: fit-content(140px) 1fr auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.grid__item {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    padding: 30px;
+}
+//=======================================
+.grid-wrapper {
+    display: grid;
+    //grid-template-columns: 150px 1fr;
+    //grid-template-rows: 100px 1fr;
+    //grid-template-areas:
+        //"header header"
+        //"side content";
+        grid-template:
+            [start] "header header" 100px [row2]
+            [row2] "side content" 1fr [row-end] / 150px 1fr;
+}
+.grid {
+    &-header,
+    &-side,
+    &-content {
+        padding: 30px;
+        border: 2px dashed rgba(255,255,255,.2);
+        margin: 0 0 15px 0;
+    }
+}
+.grid-header {
+    grid-area: header;
+}
+.grid-side {
+    grid-area: side;
+}
+.grid-content {
+    grid-area: content;
+}
+//=======================================
+.grid__body-2 {
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    //grid-template-rows: repeat(2, 1fr);
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+}
+.grid__item-2 {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    padding: 30px;
+}
+//=======================================
+.grid-auto {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(3, 1fr);
+    //значения неявного ряда
+    grid-auto-rows: 200px;
+    //работает, если не задана сетка
+    //grid-auto-columns: 150px;
+}
+.grid-auto__item {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    padding: 30px;
+}*/
 .grid__body {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr; }
+  grid-template-rows: [start] 1fr [row] 1fr [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end]; }
 
 .grid__item {
   text-align: center;
   border: 2px dashed rgba(255, 255, 255, 0.2);
-  padding: 30px; }
-
-.grid-wrapper {
-  display: grid;
-  grid-template: [start] "header header" 100px [row2] [row2] "side content" 1fr [row-end]/150px 1fr; }
-
-.grid-header, .grid-side, .grid-content {
   padding: 30px;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  margin: 0 0 15px 0; }
-
-.grid-header {
-  grid-area: header; }
-
-.grid-side {
-  grid-area: side; }
-
-.grid-content {
-  grid-area: content; }
-
-.grid__body-2 {
-  display: grid;
-  grid-template: repeat(1, 1fr)/repeat(3, 1fr); }
-
-.grid__item-2 {
-  text-align: center;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  padding: 30px; }
-
-.grid-auto {
-  display: grid;
-  grid-template: 1fr 1fr/repeat(3, 1fr);
-  grid-auto-rows: 200px; }
-
-.grid-auto__item {
-  text-align: center;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  padding: 30px; }
+  margin: 10px; }
+  .grid__item_1 {
+    /*
+    //span - ключевое слово, означает,что объект занимает указанное количество строк (колонок, если для grid-column-start)
+    grid-row-start: span 2;
+    grid-column-start: 3;
+    //grid-column-end: 3;
+    */
+    grid-row: 1 / 3;
+    grid-column: 2 / 4;
+    background-color: saddlebrown; }
 
 /*# sourceMappingURL=style.css.map */

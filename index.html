@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--ВАЖНО! Отдельная настройка префиксов для grid (-ms-)-->
-    <h2>Grid, inline-grid</h2>
+    <!--<h2>Grid, inline-grid</h2>
     <div class="grid_dem">display: grid;</div>
     <div class="grid-inline_dem">display: inline-grid;</div>
     <h2>Определение сетки</h2>
@@ -48,6 +48,18 @@
         <div class="grid-auto__item">5</div>
         <div class="grid-auto__item">6</div>
         <div class="grid-auto__item">7</div>
+    </div>-->
+    <h2>Элементы сетки</h2>
+    <div class="grid">
+        <div class="grid__body">
+            <div class="grid__item grid__item_1">1</div>
+            <!--строчные элементы, становясь элементами сетки, превращаются в блочные-->
+            <span class="grid__item grid__item_2">2</span>
+            <div class="grid__item grid__item_3">3</div>
+            <div class="grid__item grid__item_4">4</div>
+            <span class="grid__item grid__item_5">5</span>
+            <div class="grid__item grid__item_6">6</div>
+        </div>
     </div>
 </body>
 </html>

@@ -2,6 +2,7 @@ body {
     background-color: #133b04fa;
     color: white;
 }
+/*
 //=======================================
 .grid_dem {
     display: grid;
@@ -87,4 +88,37 @@ body {
     text-align: center;
     border: 2px dashed rgba(255,255,255,.2);
     padding: 30px;
+}*/
+//=======================================
+.grid__body {
+    display: grid;
+    //grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    //задание имён линиям сетки
+    grid-template-rows: [start] 1fr [row] 1fr [row-end];
+    grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+}
+.grid__item {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    //лучше не задавать паддинг и марджин в процентах для элементов сетки
+    padding: 30px;
+    //работают отдельно для каждого элемента сетки, не накладываются друг на друга
+    margin: 10px;
+    //размещение элементов с помощью линий сетки
+    &_1 {
+        //grid-row-start: 2;
+        //grid-row-end: 3;
+        /*
+        //span - ключевое слово, означает,что объект занимает указанное количество строк (колонок, если для grid-column-start)
+        grid-row-start: span 2;
+        grid-column-start: 3;
+        //grid-column-end: 3;
+        */
+        //grid-row-start: start;
+        //grid-column-start: col2;
+        grid-row: 1 / 3;//номера линий начала и конца объекта, можно через имена линий
+        grid-column: 2 / 4;
+
+        background-color: saddlebrown;
+    }
 }
