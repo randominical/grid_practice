@@ -92,14 +92,20 @@ body {
 }*/
 .grid__body {
   display: grid;
-  grid-template-rows: [start] 1fr [row] 1fr [row-end];
-  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end]; }
+  grid-template-rows: [start] 150px [row] 150px [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+  justify-items: start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  row-gap: 20px;
+  -webkit-column-gap: 5%;
+          column-gap: 5%; }
 
 .grid__item {
   text-align: center;
   border: 2px dashed rgba(255, 255, 255, 0.2);
-  padding: 30px;
-  margin: 10px; }
+  padding: 30px; }
   .grid__item_1 {
     /*
     //span - ключевое слово, означает,что объект занимает указанное количество строк (колонок, если для grid-column-start)
@@ -107,8 +113,17 @@ body {
     grid-column-start: 3;
     //grid-column-end: 3;
     */
-    grid-row: 1 / 3;
-    grid-column: 2 / 4;
+  /*
+//grid-row-start: start;
+//grid-column-start: col2;
+grid-row: 1 / 3;//номера линий начала и конца объекта, можно через имена линий
+grid-column: 2 / 4;*/
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
+    justify-self: stretch;
     background-color: saddlebrown; }
+  .grid__item_2 {
+    margin: auto;
+    background-color: #518f01; }
 
 /*# sourceMappingURL=style.css.map */
