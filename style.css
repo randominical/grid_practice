@@ -1,14 +1,27 @@
-.grid {
+body {
+  background-color: #1c5506e1; }
+
+.grid_dem {
   display: grid;
   font-size: 30px;
   padding: 20px;
   background-color: #794f45;
   margin: 0 0 20px 0; }
 
-.grid-inline {
+.grid-inline_dem {
   display: inline-grid;
   font-size: 30px;
   padding: 20px;
   background-color: #77608d; }
+
+.grid__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr; }
+
+.grid__item {
+  text-align: center;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  padding: 30px; }
 
 /*# sourceMappingURL=style.css.map */

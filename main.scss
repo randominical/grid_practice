@@ -1,13 +1,33 @@
-.grid {
+body {
+    background-color: #1c5506e1;
+}
+//=======================================
+.grid_dem {
     display: grid;
     font-size: 30px;
     padding: 20px;
     background-color: #794f45;
     margin: 0 0 20px 0;
 }
-.grid-inline {
+.grid-inline_dem {
     display: inline-grid;
     font-size: 30px;
     padding: 20px;
     background-color: #77608d;
+}
+//=======================================
+.grid__body {
+    display: grid;
+    //grid-template-columns: 30% 150px 50%;
+    //grid-template-columns: 1fr 1.5fr 1fr;
+    //1fr при остальных фиксированных единицах стремится заполнить всё пространство, 1fr не может выступать в качестве минимальной ширины
+    //grid-template-columns: 200px minmax(150px, 1fr) 200px;
+    //grid-template-columns: fit-content(140px) 1fr auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.grid__item {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    padding: 30px;
 }
